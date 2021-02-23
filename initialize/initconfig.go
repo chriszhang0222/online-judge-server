@@ -4,6 +4,8 @@ import (
 	"go.uber.org/zap"
 	"online-judge-server/global"
 )
+
+
 func InitConfig() {
 	configFileName := "./config.yaml"
 	v := viper.New()
