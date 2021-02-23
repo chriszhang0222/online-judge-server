@@ -5,7 +5,9 @@ go 1.14
 require (
 	github.com/google/go-cmp v0.5.4 // indirect
 	github.com/kr/pretty v0.2.1 // indirect
+	github.com/spf13/viper v1.7.1
 	go.mongodb.org/mongo-driver v1.4.6
+	go.uber.org/zap v1.10.0
 	golang.org/x/crypto v0.0.0-20200930160638-afb6bcd081ae // indirect
 	golang.org/x/net v0.0.0-20201202161906-c7110b5ffcbb // indirect
 	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a // indirect
