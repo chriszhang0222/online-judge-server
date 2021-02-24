@@ -6,7 +6,8 @@ import (
 )
 
 func InitProblemsRouter(group *gin.RouterGroup){
-	GoodsRouter := group.Group("problems")
-	GoodsRouter.GET("", api.ProblemList)
+	Router := group.Group("problems")
+	Router.GET("", api.ProblemList)
+	Router.GET("/:id", api.ProblemDetail)
 
 }
