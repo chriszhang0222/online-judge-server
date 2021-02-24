@@ -35,3 +35,19 @@ func InsertProblem(problem *model.Problem) bool{
 	}
 	return false
 }
+
+func FindByName(query string)[]*model.Problem{
+	collection := global.MongoClient.Database(global.GlobalConfig.Mongo.Name).Collection("problemmodels")
+	lst := make([]*model.Problem, 0)
+	filter := bson.M{"status": bson.M{"$regex":".*"+query+".*"}}
+	data, _ := collection.Find(context.Background(), filter)
+	defer data.Close(context.Background())
+	for data.Next(context.Background()){
+		var res *model.Problem = &model.Problem{}
+		err := data.Decode(res)
+		if err == nil{
+			lst = append(lst, res)
+		}
+	}
+	return lst
+}
