@@ -16,8 +16,8 @@ func parsePort(){
 	flag.Parse()
 }
 func main(){
-	initialize.InitConfig()
 	initialize.InitLogger()
+	initialize.InitConfig()
 	parsePort()
 	Router := initialize.InitRouter()
 	go func() {
