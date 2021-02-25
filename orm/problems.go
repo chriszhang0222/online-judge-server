@@ -62,3 +62,12 @@ func FindById(id int)*model.Problem{
 	}
 	return result
 }
+
+func TotalCount() int64{
+	collection := global.MongoClient.Database(global.GlobalConfig.Mongo.Name).Collection("problemmodels")
+	count, err := collection.CountDocuments(context.Background(), bson.M{})
+	if err != nil{
+		return 0
+	}
+	return count
+}

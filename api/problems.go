@@ -73,3 +73,10 @@ func AddProblem(ctx *gin.Context){
 		"msg": "Failed to add problem",
 	})
 }
+
+func TotalCount(ctx *gin.Context){
+	count := orm.TotalCount()
+	ctx.JSON(http.StatusOK, gin.H{
+		"data": count,
+	})
+}
