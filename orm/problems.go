@@ -29,7 +29,7 @@ func GetProblemList(page, pnum int)[]*model.Problem{
 
 func InsertProblem(problem *model.Problem) bool{
 	collection := global.MongoClient.Database(global.GlobalConfig.Mongo.Name).Collection("problemmodels")
-	_, err := collection.InsertOne(context.Background(), bson.M{"name": problem.Name, "desc": problem.Desc, "diff": problem.Diff})
+	_, err := collection.InsertOne(context.Background(), bson.M{"name": problem.Name, "desc": problem.Desc, "diff": problem.Diff, "id": problem.Id})
 	if err == nil{
 		return true
 	}
