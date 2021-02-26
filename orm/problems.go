@@ -52,7 +52,7 @@ func FindByName(query string)[]*model.Problem{
 	return lst
 }
 
-func FindById(id int)*model.Problem{
+func FindById(id string)*model.Problem{
 	collection := global.MongoClient.Database(global.GlobalConfig.Mongo.Name).Collection("problemmodels")
 	filter := bson.M{"id": id}
 	result := &model.Problem{}

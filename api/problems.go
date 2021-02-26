@@ -27,12 +27,7 @@ func ProblemList(ctx *gin.Context){
 
 func ProblemDetail(ctx *gin.Context){
 	id := ctx.Param("id")
-	id_int, _ := strconv.Atoi(id)
-	if id_int < 0{
-		ctx.JSON(http.StatusBadRequest, gin.H{"msg": "Problem does not exist"})
-		return
-	}
-	problem := orm.FindById(id_int)
+	problem := orm.FindById(id)
 	if problem == nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"msg": "Problem does not exist"})
 		return
