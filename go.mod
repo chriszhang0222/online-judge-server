@@ -6,6 +6,8 @@ require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator/v10 v10.2.0
 	github.com/google/go-cmp v0.5.4 // indirect
+	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/websocket v1.4.2
 	github.com/kr/pretty v0.2.1 // indirect
 	github.com/spf13/viper v1.7.1
 	go.mongodb.org/mongo-driver v1.4.6

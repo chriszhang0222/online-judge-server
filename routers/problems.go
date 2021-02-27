@@ -15,6 +15,8 @@ func InitProblemsRouter(group *gin.RouterGroup){
 	Router2 := group.Group("data")
 	{
 		Router2.GET("count", api.TotalCount)
+		Router2.GET("goroutine", api.SystemStateHandler)
 	}
+
 
 }
